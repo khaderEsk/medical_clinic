@@ -32,5 +32,12 @@ Route::controller(LoginRegisterController::class)->group(function () {
 
 Route::controller(PatientsController::class)->group(function () {
 
-    Route::get('/get', 'index');
+    Route::get('/getPatient', 'index')->name('getPatient');
+
+    Route::get('show/{id}', 'show')->name('classroom.view');
+    Route::get('/createPatient', 'addPatients');
+    Route::post('createPatient', 'store');
+    Route::get('/goodStudent', function () {
+        return view('auth/goodStudent');
+    });
 });
