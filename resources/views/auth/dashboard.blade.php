@@ -1,37 +1,38 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<!DOCTYPE html>
-<html>
-
 <head>
-    <title>My Awesome Login Page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('assets/css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
     <style>
         @include('main');
     </style>
 </head>
-<!--Coded with love by Mutiullah Samim-->
+@extends('auth.master')
+@section('cont')
+    <div class="textarbic">
 
-<body>
-    <div class="container h-100">
-        <div class="d-flex justify-content-center h-100">
-            <div class="user_card">
-                
-            </div>
+        <div class="one">
+            <a href="/getPatient" class="khader" style="padding: 0">
+                <div style="background-color:#82d1e1; height: 70px  ">
+                    <h5>قائمة المرضى</h5>
 
-
-
-
+                </div>
+                <hr>
+            </a>
         </div>
-    </div>
-    </div>
-</body>
+        <div class="one">
+            <a href="/createPatient" class="khader" style="padding: 0">
+                <div style="background-color:rgb(241 170 175); height: 70px">
+                    <h5>إضافة مريض</h5>
+                </div>
+                <hr>
 
-</html>
+            </a>
+        </div>
+
+                <div class="one">
+                    <div>
+                        <h5 style="margin-bottom: 0px; font-weight:bold; margin-left:-25px">ssss</h5>
+                        <p style="margin-left: -15px;">العدد الكلي للمرضى </p>
+                    </div>
+                </div>
+    </div>
+@endsection

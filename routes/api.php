@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\auth\DescriptionController;
 use App\Http\Controllers\Auth\PatientsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,4 +25,13 @@ Route::controller(PatientsController::class)->group(function () {
 
     Route::get('/get', 'index');
     Route::post('createPatient', 'store');
+    
+    Route::get('/getPatient', 'index')->name('getPatient');
+    
+    Route::get('show/{id}', 'show')->name('show');
+});
+
+Route::controller(DescriptionController::class)->group(function () {
+    Route::get('/description', 'index')->name('description');
+    Route::post('/addDescription', 'store');
 });

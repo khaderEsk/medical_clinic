@@ -44,14 +44,14 @@
                         <td>
                             <div>
 
-                                <a href="{{ route('classroom.view', ['id' => $item->id]) }}">
+                                <a href="{{ route('show', ['id' => $item->id]) }}">
                                     <button type="button" class="btn btn-primary">
-                                        View
+                                        عرض
                                     </button>
                                 </a>
-                                <a href="{{ route('classroom.view', ['id' => $item->id]) }}">
+                                <a href="{{ route('delete', ['id' => $item->id]) }}">
                                     <button type="button" class="btn btn-danger h-30  w-30">
-                                        Delete
+                                        حذف
                                     </button>
                                 </a>
 
@@ -62,7 +62,7 @@
             </tbody>
         </table>
     @else
-        <div class="alert alert-danger" role="alert" style="margin-top: 20px">
+        <div class="alert alert-danger" role="alert" style="margin-top: 100px">
             <h3>
                 لا يوجد مرضى
             </h3>

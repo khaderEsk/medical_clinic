@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\auth\DescriptionController;
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\Auth\PatientsController;
 use Illuminate\Support\Facades\Route;
@@ -37,7 +38,21 @@ Route::controller(PatientsController::class)->group(function () {
     Route::get('show/{id}', 'show')->name('classroom.view');
     Route::get('/createPatient', 'addPatients');
     Route::post('createPatient', 'store');
-    Route::get('/goodStudent', function () {
-        return view('auth/goodStudent');
+    Route::get('/goodAddPatient', function () {
+        return view('auth/goodAddPatient');
+    });
+    Route::get('delete/{id}', 'destroy')->name('delete');
+    Route::get('/goodDeletePatient', function () {
+        return view('auth/goodDeletePatient');
+    });
+    Route::get('show/{id}', 'show')->name('show');
+});
+
+
+Route::controller(DescriptionController::class)->group(function () {
+    Route::get('/description', 'index')->name('description');
+    Route::post('description', 'store')->name('dede');
+    Route::get('/goodAddPatient', function () {
+        return view('auth/goodAddPatient');
     });
 });

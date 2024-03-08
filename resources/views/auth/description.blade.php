@@ -7,7 +7,7 @@
 <html>
 
 <head>
-    <title>My Awesome Login Page</title>
+    <title>تسديد مبلغ</title>
 
     <style>
         @include('main');
@@ -20,13 +20,11 @@
     <br>
     <div class="form_id">
         <h1>اضافة مريض</h1>
-        <form action="{{ url('createPatient') }}" onsubmit="return validateFormStudent()"method="POST">
+        <form action="{{ url('description') }}" onsubmit="return validateFormStudent()"method="POST">
             @csrf
-            <input type="text" name="name" class="form-control" placeholder="اسم المريض">
-            <input type="text" name="address" class="form-control" placeholder="عنوان المريض">
-            <input type="text" name="phone" class="form-control" placeholder="رقم الهاتف">
-            <input type="number" name="account" class="form-control" placeholder="مبلغ العلاج">
-            <textarea name="description" rows="4" cols="50"></textarea>
+            <label for="description">وصف المستخدم:</label><br>
+            <input type="text" name="details" class="form-control" placeholder="عنوان المريض">
+            <input type="text" name="user_id" class="form-control" placeholder="عنوان المريض">
             <button class="but" type="submit" value="Send">
                 <h5 style="margin-top: -1px; color:white">
                     حفظ البيانات
