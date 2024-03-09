@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\auth\AppointmentController;
 use App\Http\Controllers\auth\DescriptionController;
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\Auth\PatientsController;
@@ -52,6 +53,17 @@ Route::controller(PatientsController::class)->group(function () {
 Route::controller(DescriptionController::class)->group(function () {
     Route::get('/description', 'index')->name('description');
     Route::post('description', 'store')->name('dede');
+    Route::get('/goodAddPatient', function () {
+        return view('auth/goodAddPatient');
+    });
+});
+
+
+
+Route::controller(AppointmentController::class)->group(function () {
+
+    Route::post('appointment', 'store')->name('appointment');
+    Route::get('show-appointment/{id}', 'show')->name('show-appointment');
     Route::get('/goodAddPatient', function () {
         return view('auth/goodAddPatient');
     });

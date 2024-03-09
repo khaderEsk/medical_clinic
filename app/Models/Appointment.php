@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Appointment extends Model
 {
     use HasFactory;
-    protected $table = "wallets";
+    protected $table = "appointment";
     protected $fillable = ['user_id', 'time','date'];
     protected $hidden = ['created_at', 'updated_at', 'id'];
 

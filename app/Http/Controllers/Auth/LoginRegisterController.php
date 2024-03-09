@@ -35,15 +35,15 @@ class LoginRegisterController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:250',
-            'password' => 'required|min:8|confirmed'
+            'name' => 'required',
+            'password' => 'required'
         ]);
-
-        User::create([
+        
+        User::created([
             'name' => $request->name,
             'password' => Hash::make($request->password)
         ]);
-
+        
         $credentials = $request->only('name', 'password');
         Auth::attempt($credentials);
         $request->session()->regenerate();
@@ -82,8 +82,8 @@ class LoginRegisterController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Your provided credentials do not match in our records.',
-        ])->onlyInput('email');
+            'name' => 'Your provided credentials do not match in our records.',
+        ])->onlyInput('name');
 
     } 
     

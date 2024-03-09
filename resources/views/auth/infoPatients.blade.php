@@ -39,7 +39,7 @@
             <input type="text" name="details" class="form-control1" placeholder="وصف المريض">
             <input type="hidden" name="user_id" value="{{ $pat->id }}" class="form-control"
                 placeholder="عنوان المريض">
-            <button class="but Des" type="submit" value="Send">
+            <button class="add" type="submit" value="Send">
                 <h5 style="margin-top: 10px; color:white; font-size: 18px;">
                     حفظ الوصف
                 </h5>
@@ -47,9 +47,32 @@
         </form>
     </div>
 
+    <div class="div-info" style="height: 200px;">
+        <a href="{{ route('show-appointment', ['id' => $pat->id]) }}">
+            <button class="add show" type="submit" value="Send">
+                <h5 style="margin-top: 10px; color:white; font-size: 18px;">
+                    عرض الموعد
+                </h5>
+            </button>
+            <h1>اضافة موعد جديد للمريض</h1>
+        </a>
+        <form action="{{ url('appointment') }}" onsubmit="return validateFormStudent()"method="POST">
+            @csrf
+            <input type="date" name="date" class="form-control1" placeholder="وصف المريض">
+            <br><br>
+            <input type="time" name="time" class="form-control1" placeholder="وصف المريض">
+            <input type="hidden" name="user_id" value="{{ $pat->id }}" class="form-control">
+            <br>
+            <button class="add" type="submit" value="Send">
+                <h5 style="margin-top: 10px; color:white; font-size: 18px;">
+                    تثبيت الموعد
+                </h5>
+            </button>
+        </form>
+    </div>
 
 
-    @if ($Des->count() > 0)
+    {{-- @if ($Des->count() > 0)
         <table class="table table-striped" style="margin-top:100px ">
             <thead>
                 <tr>
@@ -72,7 +95,7 @@
                 لا يوجد وصف لمريض
             </h3>
         </div>
-    @endif
+    @endif --}}
 
 </body>
 

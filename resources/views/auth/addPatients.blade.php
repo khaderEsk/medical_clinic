@@ -26,8 +26,9 @@
             <input type="text" name="address" class="form-control" placeholder="عنوان المريض">
             <input type="text" name="phone" class="form-control" placeholder="رقم الهاتف">
             <input type="number" name="account" class="form-control" placeholder="مبلغ العلاج">
+            <h5 style="margin:10px;">اضافة وصف لحالة المريض</h5>
             <textarea name="description" rows="4" cols="50"></textarea>
-            <button class="but" type="submit" value="Send">
+            <button class="but" type="submit" value="Send" style="margin-top: 25px;">
                 <h5 style="margin-top: -1px; color:white">
                     حفظ البيانات
                 </h5>
